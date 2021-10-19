@@ -68,28 +68,37 @@ const Header = () => {
             />
           </g>
         </svg>
-        <div>
-          <nav>
-                <Link to="/inbox">Inbox </Link>
-                <Link to="/calls">All calls </Link>
-                <Link to="/settings">S </Link>
-          </nav>
-
+        <div className="link-group">
+          <div>
+            <Link to="/inbox" className="links">
+              Inbox
+            </Link>
+          </div>
+          <div>
+            <Link to="/calls" className="links">
+              All calls
+            </Link>
+          </div>
+          <div>
+            <Link to="/settings" className="links">
+              S
+            </Link>
+          </div>
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/inbox">
-              <Inbox />
-            </Route>
-            <Route path="/calls">
-              <Calls />
-            </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
-          </Switch>
         </div>
       </header>
+      <Switch>
+        <Route path="/inbox">
+          <Inbox />
+        </Route>
+        <Route path="/calls">
+          <Calls />
+        </Route>
+        <Route path="/settings">
+          <Settings />
+        </Route>
+      </Switch>
     </Router>
   );
 };

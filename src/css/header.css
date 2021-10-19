@@ -10,6 +10,18 @@ header {
 header svg {
   display: block;
   height: 100%;
+  margin-left: 1em;
 }
 
+.links {
+  text-decoration: none;
+}
 
+.link-group {
+  display: flex;
+  margin-left: 2em;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
