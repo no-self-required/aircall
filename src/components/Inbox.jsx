@@ -1,15 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-
-import "./Inbox.css";
-
-import SingleCall from "./SingleCall/SingleCall.jsx";
 import { CircularProgress } from "@mui/material";
+import SingleCall from "./SingleCall/SingleCall.jsx";
 
 const Inbox = () => {
-  const [allCalls, setallCalls] = useState([]);
-  const [loading, setLoading] = useState(false);
+  //All activity state
+  const [allCalls, setallCalls] = useState([]); 
+  //Loading icon state
+  const [loading, setLoading] = useState(false); 
 
+  //Get all calls and set state
   useEffect(() => {
     setLoading(true);
     axios
@@ -23,7 +23,7 @@ const Inbox = () => {
       });
   }, []);
 
-  //if call is not archived, show inside inbox
+  //If call is not archived, show inside inbox route
   const IncomingCalls = allCalls.map((i) => {
     if (!i.is_archived) {
       return (

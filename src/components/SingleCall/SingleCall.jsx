@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./singlecall.css";
 import dayjs from "dayjs";
-
 import { VscCallIncoming, VscCallOutgoing } from "react-icons/vsc";
 import { BsVoicemail } from "react-icons/bs";
-
 import Button from "@mui/material/Button";
+import "./singlecall.css";
+
 function SingleCall({
   callId,
   created,
@@ -19,13 +18,16 @@ function SingleCall({
   callSet,
   isArchived,
 }) {
-  const [showInfo, setShowInfo] = useState(false);
 
+  //State to show more call details on click
+  const [showInfo, setShowInfo] = useState(false);
+  const onClick = () => (showInfo ? setShowInfo(false) : setShowInfo(true));
+
+  //Format date and time
   const formatedTime = dayjs(created).format("HH:mm a");
   const formatedDate = dayjs(created).format("MMMM, DD YYYY");
 
-  const onClick = () => (showInfo ? setShowInfo(false) : setShowInfo(true));
-
+  //Send post request to set archive status to true
   const setArchived = (id, callback) => {
     axios
       .post(`https://aircall-job.herokuapp.com/activities/${id}`, {
@@ -39,6 +41,7 @@ function SingleCall({
       });
   };
 
+  //Send post request to set archive status to false
   const setUnArchived = (id, callback) => {
     axios
       .post(`https://aircall-job.herokuapp.com/activities/${id}`, {
@@ -52,6 +55,7 @@ function SingleCall({
       });
   };
 
+  //Send get request for updated list of calls and set state in parent component
   const getNewCalls = () => {
     axios
       .get("https://aircall-job.herokuapp.com/activities")

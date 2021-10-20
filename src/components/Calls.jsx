@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-
-import "./Inbox.css";
 import SingleCall from "./SingleCall/SingleCall.jsx";
 import { CircularProgress } from "@mui/material";
+import "./Inbox.css";
 
 const Calls = () => {
   const [allCalls, setallCalls] = useState([]);
@@ -22,7 +21,7 @@ const Calls = () => {
       });
   }, []);
 
-  //show all calls
+  //Show all calls in All calls route
   const IncomingCalls = allCalls.map((i) => {
     return (
       <div>

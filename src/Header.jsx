@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import Calls from "./components/Calls.jsx";
 import Inbox from "./components/Inbox.jsx";
@@ -8,7 +8,7 @@ import Archived from "./components/Archived.jsx";
 
 import Button from "@mui/material/Button";
 
-import './css/header.css'
+import "./css/header.css";
 
 const Header = () => {
   return (
@@ -73,30 +73,31 @@ const Header = () => {
         <div className="link-group">
           <div>
             <Link to="/inbox" className="links">
-              <div >
-              <Button id="headButton">Inbox</Button>
+              <div>
+                <Button id="headButton">Inbox</Button>
               </div>
             </Link>
           </div>
           <div>
             <Link to="/calls" className="links">
-            <div >
-              <Button id="headButton">All calls</Button>
-            </div>  
+              <div>
+                <Button id="headButton">All calls</Button>
+              </div>
             </Link>
           </div>
           <div>
             <Link to="/Archived" className="links">
-            <div >
-              <Button id="headButton">Archive</Button>
-            </div>
+              <div>
+                <Button id="headButton">Archive</Button>
+              </div>
             </Link>
           </div>
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         </div>
       </header>
       <Switch>
+        <Route exact path="/">
+          <Redirect to="/inbox" />
+        </Route>
         <Route path="/inbox">
           <Inbox />
         </Route>

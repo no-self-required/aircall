@@ -20,7 +20,7 @@ const Archived = () => {
       });
   }, []);
 
-  //if call is archived show inside Archive
+  //if call is archived show inside Archive route
   const IncomingCalls = allCalls.map((i) => {
     if (i.is_archived) {
       return (

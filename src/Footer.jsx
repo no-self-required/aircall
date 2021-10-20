@@ -5,6 +5,8 @@ import { IoCallSharp } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { FiSettings } from "react-icons/fi";
 import { VscRecord } from "react-icons/vsc";
+
+//Create icon and numberpad tabs
 const Footer = () => {
   return (
     <footer>

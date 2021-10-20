@@ -6,6 +6,7 @@ import Footer from './Footer.jsx';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 
+//Set themes for material ui
 const theme = createTheme({      
   typography: {
     button: {
