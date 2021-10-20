@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./SingleCall.css";
+import "./singlecall.css";
 import dayjs from "dayjs";
 
 import { VscCallIncoming, VscCallOutgoing } from "react-icons/vsc";

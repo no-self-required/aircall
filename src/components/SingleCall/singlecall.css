@@ -1,5 +1,5 @@
 .single_call {
-  border: 1px solid rgb(219, 219, 219);
+  border: 1px solid rgb(66, 66, 66);
   background-color: rgb(255, 255, 255);
   border-radius: 1em;
   width: 90%;
@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-size: 13px;
-  border-top: 2px dotted rgba(126, 126, 126, 0.329);
+  border-top: 2px dotted rgb(66, 66, 66);
   width: 95%;
   padding-top: 1em;
   padding-bottom: 1em;

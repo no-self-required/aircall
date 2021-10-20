@@ -7,6 +7,7 @@ footer {
   background-color: white;
   position: absolute;
   bottom: 0;
+  border-top: 1px solid rgb(66, 66, 66);
 }
 
 #profiletab, #settingstab{
@@ -16,7 +17,6 @@ footer {
 #calltab {
   margin-left: 2em;
   margin-top: 1em;
-  
 }
 
 #recordtab {
@@ -33,7 +33,7 @@ footer {
   -moz-border-radius: 70px; 
   -webkit-border-radius: 70px; 
   border-radius: 70px;
-  border: 5px solid rgb(235, 235, 235);
+  border: 5px solid rgb(180, 180, 180);
   margin-top: -2.2em;
   z-index: 1;
 }
