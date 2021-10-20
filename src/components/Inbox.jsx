@@ -43,7 +43,6 @@ const Inbox = () => {
 
   return (
     <div className="inbox-container" >
-      <button id="archive-button">archive button</button>
       <div id="inboxCalls">
         {IncomingCalls}
       </div>

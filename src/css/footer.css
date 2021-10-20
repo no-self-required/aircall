@@ -8,3 +8,54 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+#profiletab, #settingstab{
+  margin: 1em;
+}
+
+#calltab {
+  margin-left: 2em;
+  margin-top: 1em;
+  
+}
+
+#recordtab {
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+#numpadtab {
+  display: flex;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background: rgb(66, 66, 66); 
+  -moz-border-radius: 70px; 
+  -webkit-border-radius: 70px; 
+  border-radius: 70px;
+  border: 5px solid rgb(235, 235, 235);
+  margin-top: -2.2em;
+  z-index: 1;
+}
+
+.align {
+  display: grid;
+  grid-template-columns: 2px 2px 2px;
+  grid-template-rows: 2px 2px 2px;
+  column-gap: 10px;
+  row-gap: 10px;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  margin-top: 1.2em;
+  margin-left: -0.2em;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  z-index: 5;
+}
+

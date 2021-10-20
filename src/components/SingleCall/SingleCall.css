@@ -33,6 +33,7 @@
 #primary {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
 }
 
 #call_type {
