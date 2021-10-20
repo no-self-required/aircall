@@ -4,12 +4,11 @@ import SingleCall from "./SingleCall/SingleCall.jsx";
 
 const Archived = () => {
   const [allCalls, setallCalls] = useState([]);
-
+  
   useEffect(() => {
     axios
       .get("https://aircall-job.herokuapp.com/activities")
       .then(function (response) {
-        console.log(response.data);
         setallCalls(response.data)
       })
       .catch(function (error) {
@@ -23,11 +22,14 @@ const Archived = () => {
       return(
         <div>
           <SingleCall
-            to={i.to}
-            from={i.from}
-            callType={i.call_type}
-            created={i.created_at}
-            direction={i.direction}
+          callId={i.id}
+          created={i.created_at}
+          direction={i.direction}
+          from={i.from}
+          to={i.to}          
+          via={i.via}
+          duration={i.duration}
+          callType={i.call_type} 
           />
         </div>
       );

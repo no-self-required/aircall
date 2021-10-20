@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "./Inbox.css";
 
+import "./Inbox.css";
 import SingleCall from "./SingleCall/SingleCall.jsx";
 
 const Calls = () => {
@@ -11,7 +11,6 @@ const Calls = () => {
     axios
       .get("https://aircall-job.herokuapp.com/activities")
       .then(function (response) {
-        console.log(response.data);
         setallCalls(response.data);
       })
       .catch(function (error) {
@@ -24,11 +23,14 @@ const Calls = () => {
     return (
       <div>
         <SingleCall
-          to={i.to}
-          from={i.from}
-          callType={i.call_type}
+          callId={i.id}
           created={i.created_at}
           direction={i.direction}
+          from={i.from}
+          to={i.to}          
+          via={i.via}
+          duration={i.duration}
+          callType={i.call_type}           
         />
       </div>
     );
@@ -36,7 +38,7 @@ const Calls = () => {
 
   return (
     <div className="inbox-container">
-      <button>archive button</button>
+      <button>archive all</button>
       <div id="inboxCalls">{calls}</div>
     </div>
   );
