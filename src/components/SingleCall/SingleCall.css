@@ -1,4 +1,71 @@
 .single_call {
-  border: 1px solid black;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
+  border-radius: 1em;
+  width: 90%;
   margin: 1em;
+}
+
+.callContainer {
+  display: flex;
+  height: 4em;
+}
+
+.moreDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+  border-top: 2px dotted rgba(126, 126, 126, 0.329);
+  width: 95%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#moreinfo {
+  display: flex;
+  justify-content: center;
+}
+#primary {
+  display: flex;
+  justify-content: space-between;
+}
+
+#call_type {
+  margin: 1em;
+}
+
+#toFrom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+#toFromTime {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#to {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+#from {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#time {
+  height: 1em;
+  padding: 1em;
+  margin-top: 0.5em;
+}
+
+#dateDirection {
+  margin-left: 0.2em;
+}
+#date, #via{
+  margin-bottom: 5px;
 }

@@ -3,3 +3,11 @@
  flex-direction: column;
  align-items: center;
 }
+
+#archive-button {
+  margin-top: 1em;
+}
+
+#inboxCalls {
+  width: 90%;
+}

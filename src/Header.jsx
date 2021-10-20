@@ -6,13 +6,13 @@ import Calls from "./components/Calls.jsx";
 import Inbox from "./components/Inbox.jsx";
 import Archived from "./components/Archived.jsx";
 
+import Button from "@mui/material/Button";
+
 const Header = () => {
   return (
     <Router>
       <header>
         <svg
-          width="150"
-          height="168px"
           viewBox="0 0 486 168"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -71,17 +71,17 @@ const Header = () => {
         <div className="link-group">
           <div>
             <Link to="/inbox" className="links">
-              Inbox
+              <Button>Inbox</Button>
             </Link>
           </div>
           <div>
             <Link to="/calls" className="links">
-              All calls
+              <Button>All calls</Button>
             </Link>
           </div>
           <div>
             <Link to="/Archived" className="links">
-              Archive
+              <Button>Archive</Button>
             </Link>
           </div>
           {/* A <Switch> looks through its children <Route>s and
@@ -98,9 +98,6 @@ const Header = () => {
         <Route path="/Archived">
           <Archived />
         </Route>
-        {/* <Route path="/call-info/:id">
-          <CallInfo />
-        </Route> */}
       </Switch>
     </Router>
   );

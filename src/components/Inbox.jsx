@@ -26,6 +26,7 @@ const Inbox = () => {
       return(
         <div>
           <SingleCall
+          key={i}
           callId={i.id}
           created={i.created_at}
           direction={i.direction}
@@ -35,6 +36,7 @@ const Inbox = () => {
           duration={i.duration}
           callType={i.call_type} 
           callSet={setallCalls}
+          isArchived={i.is_archived}
           />
         </div>
       );
@@ -42,8 +44,8 @@ const Inbox = () => {
   });
 
   return (
-    <div className="inbox-container">
-      <button>archive button</button>
+    <div className="inbox-container" >
+      <button id="archive-button">archive button</button>
       <div id="inboxCalls">
         {IncomingCalls}
       </div>

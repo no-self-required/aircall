@@ -19,10 +19,11 @@ const Calls = () => {
   }, []);
 
   //show all calls
-  const calls = allCalls.map((i, index) => {
+  const calls = allCalls.map((i) => {
     return (
       <div>
         <SingleCall
+          key={i}
           callId={i.id}
           created={i.created_at}
           direction={i.direction}
@@ -30,7 +31,8 @@ const Calls = () => {
           to={i.to}          
           via={i.via}
           duration={i.duration}
-          callType={i.call_type}           
+          callType={i.call_type}          
+          isArchived={i.is_archived} 
         />
       </div>
     );
@@ -38,7 +40,7 @@ const Calls = () => {
 
   return (
     <div className="inbox-container">
-      <button>archive all</button>
+      <button id="archive-button">archive all</button>
       <div id="inboxCalls">{calls}</div>
     </div>
   );
