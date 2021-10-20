@@ -12,15 +12,16 @@ const Calls = () => {
       .get("https://aircall-job.herokuapp.com/activities")
       .then(function (response) {
         console.log(response.data);
-        setallCalls(response.data)
+        setallCalls(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
   }, []);
 
+  //show all calls
   const calls = allCalls.map((i, index) => {
-    return(
+    return (
       <div>
         <SingleCall
           to={i.to}
@@ -33,16 +34,12 @@ const Calls = () => {
     );
   });
 
-  console.log("allCalls", allCalls);
   return (
     <div className="inbox-container">
       <button>archive button</button>
-      <div id="inboxCalls">
-        {calls}
-      </div>
+      <div id="inboxCalls">{calls}</div>
     </div>
   );
 };
 
 export default Calls;
-

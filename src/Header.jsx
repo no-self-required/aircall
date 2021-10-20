@@ -98,6 +98,9 @@ const Header = () => {
         <Route path="/Archived">
           <Archived />
         </Route>
+        {/* <Route path="/call-info/:id">
+          <CallInfo />
+        </Route> */}
       </Switch>
     </Router>
   );

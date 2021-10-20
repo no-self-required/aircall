@@ -1,12 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+// import { useHistory } from "react-router-dom";
 import "./Inbox.css";
 
-import InboxCall from "./InboxCall/InboxCall.jsx";
+import SingleCall from "./SingleCall/SingleCall.jsx";
+
+import { Modal } from "react-bootstrap";
 
 const Inbox = () => {
+  // const history = useHistory();
   const [allCalls, setallCalls] = useState([]);
+  
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   useEffect(() => {
     axios
       .get("https://aircall-job.herokuapp.com/activities")
@@ -19,12 +27,16 @@ const Inbox = () => {
       });
   }, []);
 
+  // const callInfo = (id) => {
+  //   history.pushState(`/call-info/${id}`)
+  // }
+
   //if call is not archived, show inside inbox
   const IncomingCalls = allCalls.map((i, index) => {
     if (!i.is_archived) {
       return(
-        <div>
-          <InboxCall
+        <div onClick={}>
+          <SingleCall
             to={i.to}
             from={i.from}
             callType={i.call_type}
@@ -37,7 +49,6 @@ const Inbox = () => {
     }
   });
 
-  console.log("allCalls", allCalls);
   return (
     <div className="inbox-container">
       <button>archive button</button>
