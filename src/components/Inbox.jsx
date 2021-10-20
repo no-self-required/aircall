@@ -5,7 +5,6 @@ import "./Inbox.css";
 
 import SingleCall from "./SingleCall/SingleCall.jsx";
 
-
 const Inbox = () => {
   const [allCalls, setallCalls] = useState([]);
 
@@ -14,6 +13,7 @@ const Inbox = () => {
       .get("https://aircall-job.herokuapp.com/activities")
       .then(function (response) {
         setallCalls(response.data)
+        
       })
       .catch(function (error) {
         console.log(error);
@@ -34,10 +34,11 @@ const Inbox = () => {
           via={i.via}
           duration={i.duration}
           callType={i.call_type} 
+          callSet={setallCalls}
           />
         </div>
       );
-    }
+    } 
   });
 
   return (
