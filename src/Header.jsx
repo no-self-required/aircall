@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Calls from "./components/Calls.jsx";
 import Inbox from "./components/Inbox.jsx";
-import Settings from "./components/Settings.jsx";
+import Archived from "./components/Archived.jsx";
 
 const Header = () => {
   return (
@@ -80,8 +80,8 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            <Link to="/settings" className="links">
-              S
+            <Link to="/Archived" className="links">
+              Archive
             </Link>
           </div>
           {/* A <Switch> looks through its children <Route>s and
@@ -95,8 +95,8 @@ const Header = () => {
         <Route path="/calls">
           <Calls />
         </Route>
-        <Route path="/settings">
-          <Settings />
+        <Route path="/Archived">
+          <Archived />
         </Route>
       </Switch>
     </Router>

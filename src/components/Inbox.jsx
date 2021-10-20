@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Inbox.css";
 
-import SingleCall from "./SingleCall/SingleCall.jsx";
+import InboxCall from "./InboxCall/InboxCall.jsx";
 
 const Inbox = () => {
   const [allCalls, setallCalls] = useState([]);
@@ -19,18 +19,22 @@ const Inbox = () => {
       });
   }, []);
 
-  const calls = allCalls.map((i, index) => {
-    return(
-      <div>
-        <SingleCall
-          to={i.to}
-          from={i.from}
-          callType={i.call_type}
-          created={i.created_at}
-          direction={i.direction}
-        />
-      </div>
-    );
+  //if call is not archived, show inside inbox
+  const IncomingCalls = allCalls.map((i, index) => {
+    if (!i.is_archived) {
+      return(
+        <div>
+          <InboxCall
+            to={i.to}
+            from={i.from}
+            callType={i.call_type}
+            created={i.created_at}
+            direction={i.direction}
+            isArchived={i.is_archived}
+          />
+        </div>
+      );
+    }
   });
 
   console.log("allCalls", allCalls);
@@ -38,7 +42,7 @@ const Inbox = () => {
     <div className="inbox-container">
       <button>archive button</button>
       <div id="inboxCalls">
-        {calls}
+        {IncomingCalls}
       </div>
     </div>
   );

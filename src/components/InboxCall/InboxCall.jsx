@@ -1,7 +1,7 @@
 import React from "react";
-import "./SingleCall.css";
+import "./InboxCall.css";
 
-function SingleCall({ to, from, callType, created, direction }) {
+function InboxCall({ to, from, callType, created, direction }) {
     return (
       <div className="single_call">
         <div id="date">date:---{created}</div>
@@ -15,4 +15,4 @@ function SingleCall({ to, from, callType, created, direction }) {
     );
 }
 
-export default SingleCall;
+export default InboxCall;

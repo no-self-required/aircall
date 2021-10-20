@@ -1,5 +1,5 @@
 import React from "react";
-const Settings = () => {
+const Archived = () => {
   return (
     <div>
       show archive button
@@ -9,4 +9,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Archived;
