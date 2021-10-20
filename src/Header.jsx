@@ -8,6 +8,8 @@ import Archived from "./components/Archived.jsx";
 
 import Button from "@mui/material/Button";
 
+import './css/header.css'
+
 const Header = () => {
   return (
     <Router>
@@ -71,17 +73,23 @@ const Header = () => {
         <div className="link-group">
           <div>
             <Link to="/inbox" className="links">
-              <Button>Inbox</Button>
+              <div >
+              <Button id="headButton">Inbox</Button>
+              </div>
             </Link>
           </div>
           <div>
             <Link to="/calls" className="links">
-              <Button>All calls</Button>
+            <div >
+              <Button id="headButton">All calls</Button>
+            </div>  
             </Link>
           </div>
           <div>
             <Link to="/Archived" className="links">
-              <Button>Archive</Button>
+            <div >
+              <Button id="headButton">Archive</Button>
+            </div>
             </Link>
           </div>
           {/* A <Switch> looks through its children <Route>s and

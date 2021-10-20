@@ -140,7 +140,12 @@ function SingleCall({
             <div id="toFrom">
               <div id="from">{from}</div>
               <div id="to">
-                tried to call on <b>{to}</b>
+                {to && (
+                  <div id="to">
+                    tried to call on <b>{to}</b>
+                  </div>
+                )}
+                {!to && null}
               </div>
             </div>
             <div id="time">{formatedTime}</div>
@@ -162,18 +167,17 @@ function SingleCall({
                   <div id="duration">Duration: {duration} s</div>
                 </div>
                 <div id="archiveButton">
-                <Button
-                  size="small"
-                  variant="outlined"
-                  onClick={() => {
-                    setUnArchived(callId, getNewCalls);
-                  }}
-                >
-                  Unarchive
-                </Button>
+                  <Button
+                    size="small"
+                    variant="outlined"
+                    onClick={() => {
+                      setUnArchived(callId, getNewCalls);
+                    }}
+                  >
+                    Unarchive
+                  </Button>
+                </div>
               </div>
-              </div>
-
             </div>
           ) : null}
         </div>

@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({      
   typography: {
     button: {
-      textTransform: 'none'
+      textTransform: 'none',
+      color: 'black'
+    }
+  },
+  palette: {
+    primary: {
+      main: "#000",
+      contrastText: "#fff" //button text white instead of black
     }
   }
 });
@@ -17,7 +26,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
     <div className='container'>
       <Header/>
-      <div className="container-view"></div>
+      <Footer/>
     </div>
     </ThemeProvider>
   );

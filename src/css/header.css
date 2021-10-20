@@ -27,3 +27,8 @@ header svg {
   align-items: center;
   justify-content: space-evenly;
 }
+
+#headButton:focus{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}

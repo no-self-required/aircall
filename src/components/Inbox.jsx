@@ -24,7 +24,6 @@ const Inbox = () => {
   const IncomingCalls = allCalls.map((i) => {
     if (!i.is_archived) {
       return(
-        <div>
           <SingleCall
           key={i}
           callId={i.id}
@@ -38,7 +37,6 @@ const Inbox = () => {
           callSet={setallCalls}
           isArchived={i.is_archived}
           />
-        </div>
       );
     } 
   });
