@@ -1,9 +1,16 @@
 .inbox-container {
- display: flex;
- flex-direction: column;
- align-items: center;
- overflow: scroll;
- max-height: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  max-height: 545px;
+  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.inbox-container::-webkit-scrollbar {
+  display: none;
 }
 
 #archive-button {
